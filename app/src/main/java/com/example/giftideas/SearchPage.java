@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import java.util.List;
 public class SearchPage extends AppCompatActivity {
 
     String loginType = new String();
-    ArrayList<Contact> contacts;
+    ArrayList<Row> rows;
 
 
 
@@ -108,9 +106,9 @@ public class SearchPage extends AppCompatActivity {
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.searchPageRecylerView);
 
         // Initialize contacts
-        contacts = com.example.giftideas.Contact.createContactsList(20);
+        rows = Row.createContactsList(20);
         // Create adapter passing in the sample user data
-        ContactsAdapter adapter = new ContactsAdapter(contacts);
+        recyclerViewAdaptor adapter = new recyclerViewAdaptor(rows);
         // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
         // Set layout manager to position the items

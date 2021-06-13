@@ -8,14 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class watch_list extends AppCompatActivity {
 
 
-    ArrayList<Contact> contacts;
+    ArrayList<Row> rows;
 
 
     @Override
@@ -36,9 +35,9 @@ public class watch_list extends AppCompatActivity {
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.recyclerView2);
 
         // Initialize contacts
-        contacts = Contact.createContactsList(20);
+        rows = Row.createContactsList(20);
         // Create adapter passing in the sample user data
-        ContactsAdapter adapter = new ContactsAdapter(contacts);
+        recyclerViewAdaptor adapter = new recyclerViewAdaptor(rows);
         // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
         // Set layout manager to position the items
